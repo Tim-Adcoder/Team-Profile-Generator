@@ -161,22 +161,70 @@ const promptEngineer = () => {
     })
 };
 
-"what is the team manger's name?"
-"what is the team manager's ID?"
-"what is the team manager's email?"
-"what is the team manager's office number?"
+const promptIntern = () => {
+    console.log(`
+    ===============
+    Add a New Intern
+    ===============
+    `);
 
-"which type of team member would you like to add?" 
-"Engineer" 
-"Intern" 
-"I dont want to add any more team members"
-
-"what is the team engineer's name?"
-"what is the team engineer's ID?"
-"what is the team engineer's email?"
-"what is the team engineer's Github username?"
-
-"what is the team intern's name?"
-"what is the team intern's ID?"
-"what is the team intern's email?"
-"what is the team intern's school?"
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: "what is the team intern's name?",
+            validate: internName => {
+                if (internName) {
+                    return true;
+                } else {
+                    console.log('Please enter the name of the intern!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'employeeId',
+            message: "what is the team intern's ID?",
+            validate: employeeId => {
+                if (employeeId) {
+                    return true;
+                } else {
+                    console.log('Please enter your employee ID!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "what is the team intern's email?",
+            validate: email => {
+                if (email) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "what is the team intern's school?",
+            validate: school => {
+                if (school) {
+                    return true;
+                } else {
+                    console.log('Please enter your school name!');
+                    return false;
+                }
+            }
+        }
+    ]).then(answers => {
+        console.log(answers);
+        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.school);
+        teamMembers.push(intern);
+        promptMenu();
+    })
+};
