@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "inquirer": "^9.0.0",
+    "inquirer": "^8.2.4",
     "test": "^3.0.1"
   },
   "name": "team-profile-generator",
@@ -22,6 +22,5 @@
   "bugs": {
     "url": "https://github.com/Tim-Adcoder/Team-Profile-Generator/issues"
   },
- 
   "homepage": "https://github.com/Tim-Adcoder/Team-Profile-Generator#readme"
 }
