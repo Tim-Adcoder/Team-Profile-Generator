@@ -3,6 +3,8 @@ Command line application that takes in information about employees on a software
 
 # Deployment Video Link
 
+https://drive.google.com/file/d/1YFmuqjPeVwa27hPEvrvizj_NUv8-vDHZ/view?usp=sharing
+
 # User Story
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
